@@ -9,6 +9,7 @@ defmodule ExMon do
   def start_game(player)
     do
       "Jorgin"
+
       |> create_player(:atkp, :atkg, :vida)
       |>Game.start(player)
 
