@@ -10,5 +10,6 @@ defmodule ExMonTest do
     # Assert the player has the correct moves
     assert player.moves == %{move_rnd: :chute, move_avg: :soco, move_heal: :heal}
 
+
   end
 end
