@@ -7,6 +7,26 @@ defmodule BananaBankWeb.UserJSON do
     }
   end
 
+  def get(%{user: user}) do
+    %{
+      message: "encontrado",
+      data: data(user)
+    }
+  end
+  def update(%{user: user}) do
+    %{
+      message: "atualizado",
+      data: data(user)
+    }
+  end
+
+  def delete(%{user: user}) do
+    %{
+      message: "deleted",
+      data: data(user)
+    }
+  end
+
   defp data(%User{} = user) do
     %{
       id: user.id,
