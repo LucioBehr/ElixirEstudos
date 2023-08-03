@@ -1,3 +1,0 @@
-defmodule LeetCode do
-
-end
