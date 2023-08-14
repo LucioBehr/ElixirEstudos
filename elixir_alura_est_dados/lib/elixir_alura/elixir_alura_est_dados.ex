@@ -1,46 +1,48 @@
-defmodule MenorPCarro do
+defmodule MenorPCarro1 do
   #car ["lamb", "jipe", "brasilia", "smart", "fusca"]
   #preco [10000, 46000, 16000, 46000, 17000]
+  #{time, result} = :timer.tc(fn -> MenorPCarro1.vp(car, preco, qtd, "maior") end) teste para tempo de execucao
+
   def vp(car, preco, qtd, "maior"), do: Enum.zip(car, preco) |> Enum.sort_by(fn {_name, preco} -> preco end, :desc) |> Enum.take(qtd)
   def vp(car, preco, qtd, "menor"), do: Enum.zip(car, preco) |> Enum.sort_by(fn {_name, preco} -> preco end) |> Enum.take(qtd)
   def vp(_, _, _, _), do: {:error, "Ordem digitada incorreta"}
 end
 
+defmodule MenorPCarro2 do
+    #car ["lamb", "jipe", "brasilia", "smart", "fusca"]
+    #preco [10000, 46000, 16000, 46000, 17000]
+    #{time, result} = :timer.tc(fn -> MenorPCarro2.vp(car, preco, qtd, "maior") end) teste para tempo de execucao
+  def  vp(car, preco, qtd, ordem) do
+  case ordem do
+    "maior" -> Enum.zip(car, preco) |> Enum.sort_by(fn {_name, preco} -> preco end, :desc) |> Enum.take(qtd)
+    "menor" ->  Enum.zip(car, preco) |> Enum.sort_by(fn {_name, preco} -> preco end) |> Enum.take(qtd)
+    _ -> {:error, "Ordem digitada incorreta: #{ordem}"}
+  end
+end
+end
+defmodule MenorPCarro3 do
+  #car ["lamb", "jipe", "brasilia", "smart", "fusca"]
+  #preco [10000, 46000, 16000, 46000, 17000]
+  #{time, result} = :timer.tc(fn -> MenorPCarro3.vp(car, preco, qtd, "maior") end) teste para tempo de execucao
+  def vp(car, preco, qtd, ordem) do
+    case ordem do
+      "maior"-> maior(car, preco, qtd)
+      "menor"-> menor(car, preco, qtd)
+      _ -> {:error, "ordem digitada incorreta: #{ordem}"}
+    end
+  end
+  defp maior(car, preco, qtd) do
+    Enum.zip(car, preco)
+    |> Enum.sort_by(fn {_name, preco} -> preco end, :desc)
+    |> Enum.take(qtd)
+  end
 
-#def vp(car, preco, qtd, ordem) do
-#  case ordem do
-#    "maior" -> Enum.zip(car, preco) |> Enum.sort_by(fn {_name, preco} -> preco end, :desc) |> Enum.take(qtd)
-#    "menor" ->  Enum.zip(car, preco) |> Enum.sort_by(fn {_name, preco} -> preco end) |> Enum.take(qtd)
-#    _ -> {:error, "Ordem digitada incorreta: #{ordem}"}
-#  end
-#end
-
-#defmodule MenorPCarro do
-#  #car ["lamb", "jipe", "brasilia", "smart", "fusca"]
-#  #preco [10000, 46000, 16000, 46000, 17000]
-#  def vp(car, preco, qtd, ordem) do
-#    case ordem do
-#      "maior"-> maior(car, preco, qtd)
-#      "menor"-> menor(car, preco, qtd)
-#      _ -> {:error, "ordem digitada incorreta: #{ordem}"}
-#    end
-#  end
-#
-#
-#  end
-#  defp maior(car, preco, qtd) do
-#    Enum.zip(car, preco)
-#    |> Enum.sort_by(fn {_name, preco} -> preco end, :desc)
-#    |> Enum.take(qtd)
-#  end
-#
-#  defp menor(car, preco, qtd) do
-#    Enum.zip(car, preco)
-#    |> Enum.sort_by(fn {_name, preco} -> preco end)
-#    |> Enum.take(qtd)
-#  end
-#end
-
+  defp menor(car, preco, qtd) do
+    Enum.zip(car, preco)
+    |> Enum.sort_by(fn {_name, preco} -> preco end)
+    |> Enum.take(qtd)
+  end
+end
 #defmodule MenorMaiorS do
 # #nome = ["Fernando", "Alfredo", "Flávio", "Marcela"]
 # #sal =  [3200, 6000, 5000, 2200]

@@ -39,12 +39,30 @@ defp int?(x), do: is_integer(x)
 defp maior0?(x), do: x > 0
 
 
-  def tabuada(num) when val(num) == true, do: tabuada(num, 1)
+  #def tabuada(num) when val?(num) == true, do: tabuada(num, 1)
 
-  defp tabuada(_, 11), do: []
+  #defp tabuada(_, 11), do: []
 
   defp tabuada(mult, n) do
     [mult * n] ++tabuada(mult, n + 1)
   end
 
+
+
+
+
 end
+
+
+
+#############################################################################################
+defmodule Fatorial do
+  def calcular(n), do: calcular(n, 1)
+  defp calcular(n, acc) when n > 0 do
+
+  calcular(IO.inspect(n - 1, label: "primeiro"), IO.inspect(n * acc, label: "segundo"))
+#perguntar para o Nicholas
+  end
+  defp calcular(_, acc), do: acc
+end
+#############################################################################################

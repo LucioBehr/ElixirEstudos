@@ -8,11 +8,6 @@ end
 # Caso os valores digitados nao sejam os esperados pelo programa
 defmodule MultSum do
 @spec sum_times(integer, %Examples{first: integer, last: integer}) :: integer
-def sum_times(a, params) do
-  for i <- params.first..params.last do
-    i
-  end
-  |> Enum.map(fn el -> el * a end)
-  |> Enum.sum()
+def sum_times(a, params), do: Enum.map(params.first..params.last, fn el -> el * a end) |> Enum.sum()
 end
 end

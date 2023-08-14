@@ -4,11 +4,7 @@ defmodule ConvTemp do
     [kelvin(celsius), fahrenheit(celsius)]
   end
 
-  def kelvin(celsius) do
-  celsius + 273.152
-  end
+  defp kelvin(celsius), do: celsius + 273.152
 
-  def fahrenheit(celsius) do
-  celsius * 1.8 + 32.00
-  end
+  defp fahrenheit(celsius), do: celsius * 1.8 + 32.00
 end
