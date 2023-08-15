@@ -10,4 +10,3 @@ defmodule MultSum do
 @spec sum_times(integer, %Examples{first: integer, last: integer}) :: integer
 def sum_times(a, params), do: Enum.map(params.first..params.last, fn el -> el * a end) |> Enum.sum()
 end
-end

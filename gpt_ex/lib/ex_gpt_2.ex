@@ -123,7 +123,7 @@ defmodule Ex44 do
   defmodule Ex45 do
     def count_words(string) do
       String.split(string)
-      |> Enum.reduce()
+      #|> Enum.reduce()
     end
       # Divida a string em palavras e use Enum.reduce/3 para contar.
   end
